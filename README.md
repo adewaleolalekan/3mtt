@@ -15,7 +15,7 @@ This is a simple personal profile webpage built using only HTML. It serves as a 
 
 ## GitHub Pages
 This project is hosted using [GitHub Pages](https://pages.github.com/). You can access the live website at: 
-'https://adewaleolalekan.github.io/3mtt/'
+'[https://adewaleolalekan.github.io/3mtt/](https://adewaleolalekan.github.io/3mtt/personal_profile/)'
 
 ## Future Enhancements
 - Add **CSS** for styling the page.
