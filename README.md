@@ -14,7 +14,8 @@ This is a simple personal profile webpage built using only HTML. It serves as a 
 3. Customize the content (like bio, hobbies, and contact details) to make it your own.
 
 ## GitHub Pages
-This project is hosted using [GitHub Pages](https://pages.github.com/). You can access the live website at: [Personal Profile Page](https://adewaleolalekan.github.io/3mtt/)
+This project is hosted using [GitHub Pages](https://pages.github.com/). You can access the live website at: 
+'https://adewaleolalekan.github.io/3mtt/'
 
 ## Future Enhancements
 - Add **CSS** for styling the page.
