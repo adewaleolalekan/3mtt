@@ -1,50 +1,68 @@
-// Lesson 1: Variables, Data Types, and Operators
-const lesson1Btn = document.getElementById("lesson1Btn");
-lesson1Btn.addEventListener("click", () => {
-    let name = "JavaScript";
-    let number = 42;
-    let isFun = true;
-    document.getElementById("lesson1Output").innerText = `String: ${name}, Number: ${number}, Boolean: ${isFun}`;
-});
+window.onload = function () {
+    document.getElementById("runVariables").addEventListener("click", () => {
+        let x = 10, y = 20, z = x + y;
+        document.getElementById("output").innerText = `Variable Example: ${z}`;
+    });
 
-// Lesson 2: Functions, Loops, and Conditional Statements
-const lesson2Btn = document.getElementById("lesson2Btn");
-lesson2Btn.addEventListener("click", () => {
-    function addNumbers(a, b) {
-        return a + b;
-    }
-    let sum = addNumbers(5, 10);
-    let output = "";
-    for (let i = 1; i <= 5; i++) {
-        output += `Loop ${i} - Sum: ${sum}\n`;
-    }
-    document.getElementById("lesson2Output").innerText = output;
-});
+    document.getElementById("runDataTypes").addEventListener("click", () => {
+        let num = 25, str = "Hello", bool = true;
+        document.getElementById("output").innerText = `Number: ${num}, String: ${str}, Boolean: ${bool}`;
+    });
 
-// Lesson 3: Arrays and Objects
-const lesson3Btn = document.getElementById("lesson3Btn");
-lesson3Btn.addEventListener("click", () => {
-    let fruits = ["Apple", "Banana", "Cherry"];
-    let person = { name: "John", age: 30 };
-    document.getElementById("lesson3Output").innerText = `Fruits: ${fruits.join(", ")}, Name: ${person.name}, Age: ${person.age}`;
-});
+    document.getElementById("runOperators").addEventListener("click", () => {
+        let a = 5, b = 3;
+        document.getElementById("output").innerText = `Sum: ${a + b}, Greater than: ${a > b}`;
+    });
 
-// Lesson 4: ES6+ Features
-const lesson4Btn = document.getElementById("lesson4Btn");
-lesson4Btn.addEventListener("click", () => {
-    const arrowFunction = (name) => `Hello, ${name}!`;
-    let message = arrowFunction("ES6");
-    document.getElementById("lesson4Output").innerText = message;
-});
+    document.getElementById("runFunctions").addEventListener("click", () => {
+        function greet(name) { return `Hello, ${name}!`; }
+        document.getElementById("output").innerText = greet("Student");
+    });
 
-// Lesson 5: DOM Manipulation Basics
-const lesson5Btn = document.getElementById("lesson5Btn");
-lesson5Btn.addEventListener("click", () => {
-    document.body.style.backgroundColor = "#e0f7fa";
-});
+    document.getElementById("runLoops").addEventListener("click", () => {
+        let numbers = "";
+        for (let i = 1; i <= 5; i++) numbers += i + " ";
+        document.getElementById("output").innerText = `Loop Example: ${numbers}`;
+    });
 
-// Lesson 6: Event Handling
-const lesson6Btn = document.getElementById("lesson6Btn");
-lesson6Btn.addEventListener("click", () => {
-    document.getElementById("lesson6Output").innerText = "Button Clicked! Event Handling Works!";
-});
+    document.getElementById("runConditionals").addEventListener("click", () => {
+        let num = 10;
+        document.getElementById("output").innerText = num > 5 ? "Number is greater than 5" : "Number is 5 or less";
+    });
+
+    document.getElementById("runArrays").addEventListener("click", () => {
+        let fruits = ["Apple", "Banana", "Cherry"];
+        document.getElementById("output").innerText = "Array Elements: " + fruits.join(", ");
+    });
+
+    document.getElementById("runObjects").addEventListener("click", () => {
+        let person = { name: "John", age: 25 };
+        document.getElementById("output").innerText = `Person: ${person.name}, Age: ${person.age}`;
+    });
+
+    document.getElementById("runArrowFunctions").addEventListener("click", () => {
+        const add = (a, b) => a + b;
+        document.getElementById("output").innerText = `Arrow Function Result: ${add(5, 7)}`;
+    });
+
+    document.getElementById("runDestructuring").addEventListener("click", () => {
+        let [a, b] = [10, 20];
+        let { name, age } = { name: "Alice", age: 30 };
+        document.getElementById("output").innerText = `Array: ${a}, ${b} | Object: ${name}, ${age}`;
+    });
+
+    document.getElementById("runTemplateLiterals").addEventListener("click", () => {
+        let name = "Bob";
+        document.getElementById("output").innerText = `Hello, ${name}!`;
+    });
+
+    document.getElementById("runDomManipulation").addEventListener("click", () => {
+        let newElement = document.createElement("p");
+        newElement.innerText = "This is a dynamically added paragraph!";
+        document.body.appendChild(newElement);
+    });
+
+    document.getElementById("runEventHandling").addEventListener("click", () => {
+        alert("Button Clicked! Event Handling Works!");
+    });
+};
