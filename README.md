@@ -36,7 +36,7 @@ A more advanced HTML and CSS project focused on creating a webpage that adapts t
 - A flexible navigation bar.
 - Layout adjustments for small, medium, and large screen sizes.
 
-[View Project](https://adewaleolalekan.github.io/3mtt/responsive_page/))
+[View Project](https://adewaleolalekan.github.io/3mtt/responsive_page/)
 
 ---
 
@@ -48,7 +48,7 @@ A project that introduces the basics of JavaScript by adding functionality and i
 - Event listeners to respond to user actions.
 - Basic JavaScript functions and loops for logic implementation.
 
-[View Project](https://adewaleolalekan.github.io/3mtt/javascript_essentials/))
+[View Project](https://adewaleolalekan.github.io/3mtt/javascript_essentials/)
 
 ---
 
