@@ -1,84 +1,52 @@
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("runVariables").addEventListener("click", () => {
-        let message = "Variable Example: ";
-        let x = 10;
-        const y = 20;
-        var z = x + y;
-        document.getElementById("output").innerText = message + z;
-    });
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Essentials</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Lesson 1: Variables, Data Types, and Operators</h2>
+            <button id="runVariables">Run Variables Code</button>
+            <button id="runDataTypes">Run Data Types Code</button>
+            <button id="runOperators">Run Operators Code</button>
+        </section>
 
-    document.getElementById("runDataTypes").addEventListener("click", () => {
-        let message = "Data Types Example: ";
-        let num = 25;
-        let str = "Hello";
-        let bool = true;
-        document.getElementById("output").innerText = message + `Number: ${num}, String: ${str}, Boolean: ${bool}`;
-    });
+        <section>
+            <h2>Lesson 2: Functions, Loops, and Conditionals</h2>
+            <button id="runFunctions">Run Functions Code</button>
+            <button id="runLoops">Run Loops Code</button>
+            <button id="runConditionals">Run Conditionals Code</button>
+        </section>
 
-    document.getElementById("runOperators").addEventListener("click", () => {
-        let message = "Operators Example: ";
-        let a = 5, b = 3;
-        let sum = a + b;
-        let isGreater = a > b;
-        document.getElementById("output").innerText = message + `Sum: ${sum}, Comparison: ${isGreater}`;
-    });
+        <section>
+            <h2>Lesson 3: Arrays and Objects</h2>
+            <button id="runArrays">Run Arrays Code</button>
+            <button id="runObjects">Run Objects Code</button>
+        </section>
 
-    document.getElementById("runFunctions").addEventListener("click", () => {
-        function greet(name) {
-            return `Hello, ${name}!`;
-        }
-        document.getElementById("output").innerText = greet("Student");
-    });
+        <section>
+            <h2>Lesson 4: ES6+ Features</h2>
+            <button id="runArrowFunctions">Run Arrow Functions Code</button>
+            <button id="runDestructuring">Run Destructuring Code</button>
+            <button id="runTemplateLiterals">Run Template Literals Code</button>
+        </section>
 
-    document.getElementById("runLoops").addEventListener("click", () => {
-        let message = "Loop Example: ";
-        let numbers = "";
-        for (let i = 1; i <= 5; i++) {
-            numbers += i + " ";
-        }
-        document.getElementById("output").innerText = message + numbers;
-    });
-
-    document.getElementById("runConditionals").addEventListener("click", () => {
-        let num = 10;
-        let message = num > 5 ? "Number is greater than 5" : "Number is 5 or less";
-        document.getElementById("output").innerText = message;
-    });
-
-    document.getElementById("runArrays").addEventListener("click", () => {
-        let fruits = ["Apple", "Banana", "Cherry"];
-        document.getElementById("output").innerText = "Array Elements: " + fruits.join(", ");
-    });
-
-    document.getElementById("runObjects").addEventListener("click", () => {
-        let person = { name: "John", age: 25 };
-        document.getElementById("output").innerText = `Person: ${person.name}, Age: ${person.age}`;
-    });
-
-    document.getElementById("runArrowFunctions").addEventListener("click", () => {
-        const add = (a, b) => a + b;
-        document.getElementById("output").innerText = `Arrow Function Result: ${add(5, 7)}`;
-    });
-
-    document.getElementById("runDestructuring").addEventListener("click", () => {
-        let [a, b] = [10, 20];
-        let {name, age} = { name: "Alice", age: 30 };
-        document.getElementById("output").innerText = `Array Destructuring: ${a}, ${b} | Object Destructuring: ${name}, ${age}`;
-    });
-
-    document.getElementById("runTemplateLiterals").addEventListener("click", () => {
-        let name = "Bob";
-        let message = `Hello, ${name}!`;
-        document.getElementById("output").innerText = message;
-    });
-
-    document.getElementById("runDomManipulation").addEventListener("click", () => {
-        let newElement = document.createElement("p");
-        newElement.innerText = "This is a dynamically added paragraph!";
-        document.body.appendChild(newElement);
-    });
-
-    document.getElementById("runEventHandling").addEventListener("click", () => {
-        alert("Button Clicked! Event Handling Works!");
-    });
-});
+        <section>
+            <h2>Lesson 5 & 6: DOM Manipulation & Event Handling</h2>
+            <button id="runDomManipulation">Run DOM Manipulation Code</button>
+            <button id="runEventHandling">Run Event Handling Code</button>
+        </section>
+    </main>
+    
+    <div id="output" class="output"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
