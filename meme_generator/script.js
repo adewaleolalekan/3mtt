@@ -1,4 +1,7 @@
+// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded");
+    
     // DOM Elements
     const imageUpload = document.getElementById('image-upload');
     const topTextInput = document.getElementById('top-text');
@@ -11,6 +14,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const memeBottomText = document.getElementById('meme-bottom-text');
     const downloadButton = document.getElementById('download-button');
     
+    console.log("Elements found:", 
+        !!imageUpload, 
+        !!topTextInput, 
+        !!bottomTextInput, 
+        !!generateButton, 
+        !!memePreview,
+        !!previewPlaceholder,
+        !!memeImage,
+        !!memeTopText,
+        !!memeBottomText,
+        !!downloadButton
+    );
+    
     // Event Listeners
     imageUpload.addEventListener('change', previewImage);
     topTextInput.addEventListener('input', updateText);
@@ -20,12 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Preview the selected image
     function previewImage() {
+        console.log("Image upload change detected");
         const file = imageUpload.files[0];
         
         if (file) {
+            console.log("File selected:", file.name);
             const reader = new FileReader();
             
             reader.onload = function(e) {
+                console.log("Image loaded");
                 memeImage.src = e.target.result;
             };
             
@@ -35,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update text on the meme in real-time
     function updateText() {
+        console.log("Text updated");
         memeTopText.textContent = topTextInput.value;
         memeBottomText.textContent = bottomTextInput.value;
         
@@ -45,6 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Generate the meme
     function generateMeme() {
+        console.log("Generate button clicked");
+        
         if (!imageUpload.files[0]) {
             alert('Please upload an image first!');
             return;
@@ -60,6 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Adjust font size based on text length
         adjustFontSize(memeTopText);
         adjustFontSize(memeBottomText);
+        
+        console.log("Meme generated and displayed");
     }
     
     // Adjust font size based on text length
@@ -84,15 +108,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Download the meme as an image
     function downloadMeme() {
-        // Create a canvas element
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
+        console.log("Download button clicked");
         
-        // Once the image is loaded, draw everything on canvas
-        memeImage.onload = function() {
+        try {
+            // Create a canvas element
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            
             // Set canvas dimensions to match the image
-            canvas.width = memeImage.width;
-            canvas.height = memeImage.height;
+            canvas.width = memeImage.naturalWidth || memeImage.width;
+            canvas.height = memeImage.naturalHeight || memeImage.height;
+            
+            console.log("Canvas dimensions:", canvas.width, canvas.height);
             
             // Draw the image on the canvas
             context.drawImage(memeImage, 0, 0, canvas.width, canvas.height);
@@ -116,12 +143,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const link = document.createElement('a');
             link.download = 'my-meme.png';
             link.href = canvas.toDataURL('image/png');
+            console.log("Download link created");
             link.click();
-        };
-        
-        // If the image is already loaded, manually trigger onload
-        if (memeImage.complete) {
-            memeImage.onload();
+        } catch (error) {
+            console.error("Error in downloadMeme:", error);
+            alert("There was an error creating your meme. Please try again.");
         }
     }
     
@@ -132,4 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Fill text
         context.fillText(text, x, y);
     }
+    
+    console.log("Meme generator initialized");
 });
