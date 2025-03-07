@@ -3,285 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Essentials Tutorial</title>
+    <title>JavaScript Learning Platform</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>JavaScript Essentials</h1>
-        <p>A comprehensive guide to modern JavaScript fundamentals</p>
+        <h1>JavaScript Learning Platform</h1>
+        <p>An interactive guide to JavaScript fundamentals</p>
     </header>
 
-    <div class="navigator">
-        <a href="#intro">Intro</a>
-        <a href="#lesson1">Lesson 1</a>
-        <a href="#lesson2">Lesson 2</a>
-        <a href="#lesson3">Lesson 3</a>
-        <a href="#lesson4">Lesson 4</a>
-        <a href="#lesson5">Lesson 5</a>
-        <a href="#lesson6">Lesson 6</a>
-        <a href="#best-practices">Best Practices</a>
-    </div>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#lesson1" class="active">Lesson 1: Variables, Data Types, and Operators</a></li>
+                <li><a href="#lesson2">Lesson 2: Functions, Loops, and Conditionals</a></li>
+                <li><a href="#lesson3">Lesson 3: Arrays and Objects</a></li>
+                <li><a href="#lesson4">Lesson 4: ES6+ Features</a></li>
+                <li><a href="#lesson5">Lesson 5: DOM Manipulation</a></li>
+                <li><a href="#lesson6">Lesson 6: Event Handling</a></li>
+                <li><a href="#best-practices">Best Practices</a></li>
+            </ul>
+        </nav>
 
-    <main>
-        <section id="intro">
-            <h2>JavaScript Essentials</h2>
-            <p>
-                JavaScript is a programming language that powers dynamic and interactive features on websites. 
-                It allows developers to control HTML and CSS, respond to user interactions, and manipulate content dynamically.
-            </p>
-            <p>
-                In this tutorial, we'll cover everything you need to know to get started with JavaScript development,
-                from basic syntax to modern ES6+ features.
-            </p>
-        </section>
+        <main class="content">
+            <!-- Lesson 1 -->
+            <section id="lesson1" class="lesson active">
+                <h2>Lesson 1: Variables, Data Types, and Operators</h2>
+                
+                <div class="lesson-part">
+                    <h3>Variables</h3>
+                    <p>Variables are containers for storing data. In JavaScript, we use <code>let</code>, <code>const</code>, or <code>var</code> to declare variables.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Variable declarations
+let name = "JavaScript Learner";
+const PI = 3.14159;
+var oldWay = "Not recommended anymore";</code></pre>
+                        </div>
+                        <button class="run-code" data-example="variables">Run Example</button>
+                        <div class="output" id="variables-output"></div>
+                    </div>
+                </div>
 
-        <section id="lesson1" class="lesson">
-            <h2>Lesson 1: Variables, Data Types, and Operators</h2>
+                <div class="lesson-part">
+                    <h3>Data Types</h3>
+                    <p>JavaScript supports various data types such as Strings, Numbers, Booleans, Null, Undefined, and Objects.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Data types examples
+let stringExample = "This is a text";
+let numberExample = 42;
+let booleanExample = true;
+let nullExample = null;
+let undefinedExample;
+let objectExample = { name: "JavaScript", year: 1995 };</code></pre>
+                        </div>
+                        <button class="run-code" data-example="datatypes">Run Example</button>
+                        <div class="output" id="datatypes-output"></div>
+                    </div>
+                </div>
 
-            <h3>Step 1: Variables</h3>
-            <p>
-                Variables are containers for storing data. Use <code>let</code>, <code>const</code>, or <code>var</code> to declare variables.
-            </p>
-            <div class="example">
-                <pre><code>// Modern variable declarations
-const unchangeable = 'This value cannot be reassigned';
-let changeable = 'This value can be changed';
-
-// Legacy way (avoid using var in modern code)
-var oldWay = 'This is the old way';</code></pre>
-            </div>
-
-            <div class="interactive-demo">
-                <h4>Try it yourself:</h4>
-                <button id="variable-demo">Run Example</button>
-                <div id="variable-output" class="demo-output"></div>
-            </div>
-
-            <h3>Step 2: Data Types</h3>
-            <p>
-                JavaScript supports various data types such as Strings, Numbers, Booleans, Null, Undefined, and Objects.
-            </p>
-            <div class="example">
-                <pre><code>// String
-const name = 'JavaScript';
-
-// Number
-const version = 2023;
-const decimal = 10.5;
-
-// Boolean
-const isAwesome = true;
-
-// Null
-const empty = null;
-
-// Undefined
-let notDefined;
-
-// Object
-const person = {
-    firstName: 'John',
-    lastName: 'Doe',
-    age: 30
-};
-
-// Array (special type of object)
-const colors = ['red', 'green', 'blue'];</code></pre>
-            </div>
-
-            <h3>Step 3: Operators</h3>
-            <p>
-                Operators are used to perform operations on values like Arithmetic, Comparison, and Logical operations.
-            </p>
-            <div class="example">
-                <pre><code>// Arithmetic operators
-const sum = 5 + 10;      // Addition
-const difference = 10 - 5; // Subtraction
-const product = 5 * 10;  // Multiplication
-const quotient = 10 / 5; // Division
-const remainder = 10 % 3; // Modulus (remainder)
+                <div class="lesson-part">
+                    <h3>Operators</h3>
+                    <p>Operators are used to perform operations on values.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Arithmetic operators
+let sum = 5 + 10;
+let difference = 20 - 5;
+let product = 4 * 3;
+let quotient = 20 / 4;
 
 // Comparison operators
-const isEqual = 5 === 5;       // Strict equality
-const isNotEqual = 5 !== 10;   // Strict inequality
-const greaterThan = 10 > 5;    // Greater than
-const lessThanOrEqual = 5 <= 5; // Less than or equal
+let isEqual = 5 === 5;
+let isGreater = 10 > 5;
 
 // Logical operators
-const andOperator = true && false; // Logical AND
-const orOperator = true || false;  // Logical OR
-const notOperator = !true;         // Logical NOT</code></pre>
-            </div>
-        </section>
+let andResult = true && false;
+let orResult = true || false;</code></pre>
+                        </div>
+                        <button class="run-code" data-example="operators">Run Example</button>
+                        <div class="output" id="operators-output"></div>
+                    </div>
+                </div>
+            </section>
 
-        <section id="lesson2" class="lesson">
-            <h2>Lesson 2: Functions, Loops, and Conditional Statements</h2>
-
-            <h3>Functions</h3>
-            <p>
-                Functions group reusable code and use parameters to make functions dynamic.
-            </p>
-            <div class="example">
-                <pre><code>// Function declaration
+            <!-- Lesson 2 -->
+            <section id="lesson2" class="lesson">
+                <h2>Lesson 2: Functions, Loops, and Conditional Statements</h2>
+                
+                <div class="lesson-part">
+                    <h3>Functions</h3>
+                    <p>Functions group reusable code and can use parameters to make them dynamic.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Function declaration
 function greet(name) {
     return `Hello, ${name}!`;
 }
 
 // Function expression
-const add = function(a, b) {
-    return a + b;
-};
+const square = function(num) {
+    return num * num;
+};</code></pre>
+                        </div>
+                        <button class="run-code" data-example="functions">Run Example</button>
+                        <div class="output" id="functions-output"></div>
+                    </div>
+                </div>
 
-// Arrow function (ES6+)
-const multiply = (a, b) => a * b;</code></pre>
-            </div>
-
-            <div class="interactive-demo">
-                <h4>Try calling a function:</h4>
-                <button id="function-demo">Call greet()</button>
-                <div id="function-output" class="demo-output"></div>
-            </div>
-
-            <h3>Loops</h3>
-            <p>
-                Loops repeat code until a condition is met (e.g., For, While, and For...of loops).
-            </p>
-            <div class="example">
-                <pre><code>// For loop
+                <div class="lesson-part">
+                    <h3>Loops</h3>
+                    <p>Loops repeat code until a condition is met.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// For loop
+let forResult = "";
 for (let i = 0; i < 5; i++) {
-    console.log(`Iteration ${i}`);
+    forResult += i + " ";
 }
 
 // While loop
-let count = 0;
-while (count < 5) {
-    console.log(`Count: ${count}`);
-    count++;
+let j = 0;
+let whileResult = "";
+while (j < 5) {
+    whileResult += j + " ";
+    j++;
 }
 
-// For...of loop (iterates over iterable objects like arrays)
-const fruits = ['apple', 'banana', 'orange'];
+// For...of loop (ES6)
+const fruits = ["Apple", "Banana", "Cherry"];
+let forOfResult = "";
 for (const fruit of fruits) {
-    console.log(fruit);
+    forOfResult += fruit + " ";
 }</code></pre>
-            </div>
+                        </div>
+                        <button class="run-code" data-example="loops">Run Example</button>
+                        <div class="output" id="loops-output"></div>
+                    </div>
+                </div>
 
-            <h3>Conditional Statements</h3>
-            <p>
-                Conditional Statements control flow based on conditions.
-            </p>
-            <div class="example">
-                <pre><code>// If statement
-if (condition) {
-    // code to run if condition is true
-}
-
-// If-else statement
-if (condition) {
-    // code to run if condition is true
+                <div class="lesson-part">
+                    <h3>Conditional Statements</h3>
+                    <p>Conditional statements control the flow of the program based on conditions.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// If statement
+let age = 20;
+let ifResult = "";
+if (age >= 18) {
+    ifResult = "You are an adult";
 } else {
-    // code to run if condition is false
-}
-
-// If-else if-else statement
-if (condition1) {
-    // code to run if condition1 is true
-} else if (condition2) {
-    // code to run if condition2 is true
-} else {
-    // code to run if all conditions are false
+    ifResult = "You are a minor";
 }
 
 // Switch statement
-const day = 'Monday';
+let day = 3;
+let dayName;
 switch (day) {
-    case 'Monday':
-        console.log('Start of work week');
+    case 1:
+        dayName = "Monday";
         break;
-    case 'Friday':
-        console.log('End of work week');
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
         break;
     default:
-        console.log('Another day');
+        dayName = "Unknown day";
 }</code></pre>
-            </div>
-        </section>
+                        </div>
+                        <button class="run-code" data-example="conditionals">Run Example</button>
+                        <div class="output" id="conditionals-output"></div>
+                    </div>
+                </div>
+            </section>
 
-        <section id="lesson3" class="lesson">
-            <h2>Lesson 3: Arrays and Objects</h2>
+            <!-- Lesson 3 -->
+            <section id="lesson3" class="lesson">
+                <h2>Lesson 3: Arrays and Objects</h2>
+                
+                <div class="lesson-part">
+                    <h3>Arrays</h3>
+                    <p>Arrays store multiple values in a single variable.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Array creation
+const colors = ["Red", "Green", "Blue"];
 
-            <h3>Arrays</h3>
-            <p>
-                Arrays store multiple values in a single variable.
-            </p>
-            <div class="example">
-                <pre><code>// Creating an array
-const numbers = [1, 2, 3, 4, 5];
-
-// Accessing array elements (zero-based indexing)
-const firstNumber = numbers[0]; // 1
+// Accessing array elements
+const secondColor = colors[1];
 
 // Array methods
-numbers.push(6);        // Add element to the end
-numbers.pop();          // Remove last element
-numbers.unshift(0);     // Add element to the beginning
-numbers.shift();        // Remove first element
-numbers.splice(2, 1);   // Remove element at specific position
+colors.push("Yellow");
+const removed = colors.pop();
+const joined = colors.join(", ");</code></pre>
+                        </div>
+                        <button class="run-code" data-example="arrays">Run Example</button>
+                        <div class="output" id="arrays-output"></div>
+                    </div>
+                </div>
 
-// Iterating through arrays
-numbers.forEach(number => console.log(number));
-
-// Transforming arrays
-const doubled = numbers.map(number => number * 2);
-const evenNumbers = numbers.filter(number => number % 2 === 0);</code></pre>
-            </div>
-
-            <div class="interactive-demo">
-                <h4>Array operations demo:</h4>
-                <button id="array-demo">Map and Filter</button>
-                <div id="array-output" class="demo-output"></div>
-            </div>
-
-            <h3>Objects</h3>
-            <p>
-                Objects use key-value pairs to group related data.
-            </p>
-            <div class="example">
-                <pre><code>// Creating an object
+                <div class="lesson-part">
+                    <h3>Objects</h3>
+                    <p>Objects use key-value pairs to group related data.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Object creation
 const person = {
-    firstName: 'John',
-    lastName: 'Doe',
+    name: "John Doe",
     age: 30,
-    hobbies: ['reading', 'swimming', 'coding'],
-    address: {
-        street: '123 Main St',
-        city: 'Anytown',
-        country: 'USA'
-    },
-    getFullName: function() {
-        return `${this.firstName} ${this.lastName}`;
+    profession: "Developer",
+    greet: function() {
+        return `Hello, my name is ${this.name}`;
     }
 };
 
 // Accessing object properties
-console.log(person.firstName);          // Dot notation
-console.log(person['lastName']);        // Bracket notation
-console.log(person.address.city);       // Nested objects
-console.log(person.hobbies[0]);         // Arrays within objects
-console.log(person.getFullName());      // Methods</code></pre>
-            </div>
-        </section>
+const personName = person.name;
+const personAge = person["age"];
 
-        <section id="lesson4" class="lesson">
-            <h2>Lesson 4: ES6+ Features</h2>
-            <p>
-                Includes Arrow Functions, Destructuring, and Template Literals for easier and more readable code.
-            </p>
+// Object methods
+const greeting = person.greet();</code></pre>
+                        </div>
+                        <button class="run-code" data-example="objects">Run Example</button>
+                        <div class="output" id="objects-output"></div>
+                    </div>
+                </div>
+            </section>
 
-            <h3>Arrow Functions</h3>
-            <div class="example">
-                <pre><code>// Traditional function
+            <!-- Lesson 4 -->
+            <section id="lesson4" class="lesson">
+                <h2>Lesson 4: ES6+ Features</h2>
+                
+                <div class="lesson-part">
+                    <h3>Arrow Functions</h3>
+                    <p>Arrow functions provide a shorter syntax for writing functions.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Regular function
 function add(a, b) {
     return a + b;
 }
@@ -289,286 +250,326 @@ function add(a, b) {
 // Arrow function
 const addArrow = (a, b) => a + b;
 
-// Arrow function with more statements
-const greet = name => {
+// Arrow function with body
+const greetArrow = name => {
     const greeting = `Hello, ${name}!`;
     return greeting;
 };</code></pre>
-            </div>
+                        </div>
+                        <button class="run-code" data-example="arrow-functions">Run Example</button>
+                        <div class="output" id="arrow-functions-output"></div>
+                    </div>
+                </div>
 
-            <h3>Destructuring</h3>
-            <div class="example">
-                <pre><code>// Array destructuring
+                <div class="lesson-part">
+                    <h3>Destructuring</h3>
+                    <p>Destructuring makes it easy to extract values from arrays or objects.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Array destructuring
 const coordinates = [10, 20, 30];
 const [x, y, z] = coordinates;
 
 // Object destructuring
 const user = {
-    name: 'Alice',
-    email: 'alice@example.com',
-    role: 'admin'
+    firstName: "Jane",
+    lastName: "Doe",
+    email: "jane@example.com"
 };
-const { name, email, role } = user;
+const { firstName, email } = user;</code></pre>
+                        </div>
+                        <button class="run-code" data-example="destructuring">Run Example</button>
+                        <div class="output" id="destructuring-output"></div>
+                    </div>
+                </div>
 
-// With default values
-const { age = 25 } = user;</code></pre>
-            </div>
+                <div class="lesson-part">
+                    <h3>Template Literals</h3>
+                    <p>Template literals allow easier string interpolation and multiline strings.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// String concatenation (old way)
+const oldWayString = "Hello, " + firstName + "!";
 
-            <h3>Template Literals</h3>
-            <div class="example">
-                <pre><code>// Old way of string concatenation
-const oldWay = 'Hello, ' + user.name + '! Your role is ' + user.role + '.';
+// Template literal
+const newWayString = `Hello, ${firstName}!`;
 
-// Using template literals
-const newWay = `Hello, ${user.name}! Your role is ${user.role}.`;
+// Multiline string
+const multiline = `This is a
+multiline string
+using template literals`;</code></pre>
+                        </div>
+                        <button class="run-code" data-example="template-literals">Run Example</button>
+                        <div class="output" id="template-literals-output"></div>
+                    </div>
+                </div>
+            </section>
 
-// Multi-line strings
-const multiLine = `This is a
-multi-line
-string`;</code></pre>
-            </div>
+            <!-- Lesson 5 -->
+            <section id="lesson5" class="lesson">
+                <h2>Lesson 5: DOM Manipulation Basics</h2>
+                
+                <div class="lesson-part">
+                    <h3>Selecting Elements</h3>
+                    <p>JavaScript can select HTML elements from the DOM to manipulate them.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Select elements
+const byId = document.getElementById("demo-element");
+const byClass = document.getElementsByClassName("example");
+const byQuery = document.querySelector(".example");
+const byQueryAll = document.querySelectorAll("p");</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <div id="demo-element">This is a demo element with ID</div>
+                            <p class="example">This is a paragraph with class "example"</p>
+                            <p class="example">This is another paragraph with class "example"</p>
+                        </div>
+                        <button class="run-code" data-example="dom-select">Run Example</button>
+                        <div class="output" id="dom-select-output"></div>
+                    </div>
+                </div>
 
-            <h3>Other ES6+ Features</h3>
-            <div class="example">
-                <pre><code>// Spread operator
-const arr1 = [1, 2, 3];
-const arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]
+                <div class="lesson-part">
+                    <h3>Modifying Elements</h3>
+                    <p>Change content, attributes, and styles of HTML elements.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Change content
+document.getElementById("modify-content").textContent = "Modified content";
 
-// Object spread
-const obj1 = { a: 1, b: 2 };
-const obj2 = { ...obj1, c: 3 }; // { a: 1, b: 2, c: 3 }
+// Change attributes
+document.getElementById("modify-attr").setAttribute("title", "New title");
 
-// Default parameters
-function greet(name = 'Guest') {
-    return `Hello, ${name}!`;
+// Change styles
+const styleElement = document.getElementById("modify-style");
+styleElement.style.color = "blue";
+styleElement.style.fontSize = "20px";</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <div id="modify-content">Original content</div>
+                            <div id="modify-attr" title="Original title">Hover to see the title attribute</div>
+                            <div id="modify-style">This text style will change</div>
+                        </div>
+                        <button class="run-code" data-example="dom-modify">Run Example</button>
+                        <div class="output" id="dom-modify-output"></div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>Creating Elements</h3>
+                    <p>Create new elements and add them to the DOM.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Create element
+const newParagraph = document.createElement("p");
+newParagraph.textContent = "This paragraph was created with JavaScript";
+newParagraph.className = "dynamic";
+
+// Add to DOM
+document.getElementById("element-container").appendChild(newParagraph);</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <div id="element-container">
+                                <p>Existing paragraph</p>
+                            </div>
+                        </div>
+                        <button class="run-code" data-example="dom-create">Run Example</button>
+                        <div class="output" id="dom-create-output"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lesson 6 -->
+            <section id="lesson6" class="lesson">
+                <h2>Lesson 6: Event Handling</h2>
+                
+                <div class="lesson-part">
+                    <h3>Basic Event Handling</h3>
+                    <p>Events allow JavaScript to respond to user actions.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Event listener method
+document.getElementById("click-button").addEventListener("click", function() {
+    document.getElementById("click-output").textContent = "Button was clicked!";
+});</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <button id="click-button">Click Me</button>
+                            <div id="click-output"></div>
+                        </div>
+                        <button class="run-code" data-example="events-basic">Run Example</button>
+                        <div class="output" id="events-basic-output"></div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>Event Object</h3>
+                    <p>The event object contains information about the event that occurred.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Using the event object
+document.getElementById("event-demo").addEventListener("click", function(event) {
+    const output = document.getElementById("event-output");
+    output.textContent = `Clicked at coordinates: (${event.clientX}, ${event.clientY})`;
+    output.textContent += `\nTarget element: ${event.target.tagName}`;
+});</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <div id="event-demo" class="clickable-area">Click anywhere in this area</div>
+                            <div id="event-output"></div>
+                        </div>
+                        <button class="run-code" data-example="event-object">Run Example</button>
+                        <div class="output" id="event-object-output"></div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>Event Delegation</h3>
+                    <p>Event delegation allows handling events for multiple elements with a single listener.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Event delegation
+document.getElementById("parent-container").addEventListener("click", function(event) {
+    if (event.target.classList.contains("child-element")) {
+        document.getElementById("delegation-output").textContent = 
+            `Clicked on ${event.target.textContent}`;
+    }
+});</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <div id="parent-container">
+                                <div class="child-element">Item 1</div>
+                                <div class="child-element">Item 2</div>
+                                <div class="child-element">Item 3</div>
+                            </div>
+                            <div id="delegation-output"></div>
+                        </div>
+                        <button class="run-code" data-example="event-delegation">Run Example</button>
+                        <div class="output" id="event-delegation-output"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Best Practices -->
+            <section id="best-practices" class="lesson">
+                <h2>Best Practices</h2>
+                
+                <div class="lesson-part">
+                    <h3>Minimize DOM Access</h3>
+                    <p>Store references to frequently accessed elements in variables.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Bad practice (multiple DOM accesses)
+function updateCounterBad() {
+    document.getElementById("counter-value").textContent = 
+        parseInt(document.getElementById("counter-value").textContent) + 1;
 }
 
-// Rest parameters
-function sum(...numbers) {
-    return numbers.reduce((total, num) => total + num, 0);
-}
-
-// Classes
-class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    
-    greet() {
-        return `Hello, my name is ${this.name}`;
-    }
+// Good practice (store reference)
+function updateCounterGood() {
+    const counterElement = document.getElementById("counter-value");
+    counterElement.textContent = parseInt(counterElement.textContent) + 1;
 }</code></pre>
-            </div>
-        </section>
-
-        <section id="lesson5" class="lesson">
-            <h2>Lesson 5: DOM Manipulation Basics</h2>
-            <p>
-                The DOM (Document Object Model) represents the structure of an HTML document. JavaScript can modify elements dynamically.
-            </p>
-
-            <h3>Selecting Elements</h3>
-            <div class="example">
-                <pre><code>// Select by ID
-const element = document.getElementById('myId');
-
-// Select by class name (returns a collection)
-const elements = document.getElementsByClassName('myClass');
-
-// Select by tag name (returns a collection)
-const paragraphs = document.getElementsByTagName('p');
-
-// Modern selectors (returns first match)
-const singleElement = document.querySelector('.myClass');
-
-// Modern selectors (returns all matches)
-const allElements = document.querySelectorAll('div.container');</code></pre>
-            </div>
-
-            <h3>Modifying Elements</h3>
-            <div class="example">
-                <pre><code>// Changing content
-element.textContent = 'New text content';
-element.innerHTML = '<span>HTML content</span>';
-
-// Changing attributes
-element.setAttribute('class', 'newClass');
-element.id = 'newId';
-element.href = 'https://example.com';
-
-// Changing styles
-element.style.color = 'red';
-element.style.fontSize = '16px';
-element.style.display = 'none';</code></pre>
-            </div>
-
-            <h3>Creating and Adding Elements</h3>
-            <div class="example">
-                <pre><code>// Create a new element
-const newParagraph = document.createElement('p');
-
-// Add content to the element
-newParagraph.textContent = 'This is a new paragraph';
-
-// Append element to the DOM
-document.body.appendChild(newParagraph);
-
-// Insert element before another element
-const referenceElement = document.getElementById('reference');
-document.body.insertBefore(newParagraph, referenceElement);
-
-// Remove element
-element.remove();</code></pre>
-            </div>
-
-            <div class="interactive-demo">
-                <h4>DOM Manipulation Demo:</h4>
-                <div id="dom-playground">
-                    <p id="demo-target">This text will change when you click the button.</p>
-                </div>
-                <button id="dom-demo">Change Text</button>
-                <button id="dom-add">Add Element</button>
-            </div>
-        </section>
-
-        <section id="lesson6" class="lesson">
-            <h2>Lesson 6: Event Handling</h2>
-            <p>
-                Event handling allows JavaScript to respond to user actions like clicks or key presses.
-            </p>
-
-            <h3>Adding Event Listeners</h3>
-            <div class="example">
-                <pre><code>// Adding a click event listener
-const button = document.querySelector('button');
-button.addEventListener('click', function() {
-    alert('Button clicked!');
-});
-
-// Using arrow functions
-button.addEventListener('click', () => {
-    console.log('Button clicked!');
-});
-
-// Named function handler
-function handleClick(event) {
-    console.log('Clicked!', event);
-}
-button.addEventListener('click', handleClick);
-
-// Remove event listener
-button.removeEventListener('click', handleClick);</code></pre>
-            </div>
-
-            <h3>Common Event Types</h3>
-            <div class="example">
-                <pre><code>// Mouse events
-element.addEventListener('click', handler);      // On click
-element.addEventListener('dblclick', handler);   // On double click
-element.addEventListener('mouseenter', handler); // Mouse enters element
-element.addEventListener('mouseleave', handler); // Mouse leaves element
-
-// Keyboard events
-document.addEventListener('keydown', handler);   // Key is pressed
-document.addEventListener('keyup', handler);     // Key is released
-
-// Form events
-form.addEventListener('submit', handler);        // Form submission
-input.addEventListener('focus', handler);        // Input gets focus
-input.addEventListener('blur', handler);         // Input loses focus
-input.addEventListener('change', handler);       // Input value changes
-
-// Document/Window events
-window.addEventListener('load', handler);        // Page finished loading
-window.addEventListener('resize', handler);      // Window resized
-document.addEventListener('DOMContentLoaded', handler); // DOM is ready</code></pre>
-            </div>
-
-            <h3>Event Object</h3>
-            <div class="example">
-                <pre><code>// The event object contains information about the event
-button.addEventListener('click', function(event) {
-    // Get information about the click
-    console.log(`Clicked at coordinates: ${event.clientX}, ${event.clientY}`);
-    
-    // Prevent default behavior
-    event.preventDefault();
-    
-    // Stop event propagation
-    event.stopPropagation();
-    
-    // Get the target element
-    console.log('Clicked element:', event.target);
-});</code></pre>
-            </div>
-
-            <div class="interactive-demo">
-                <h4>Event Handling Demo:</h4>
-                <div id="event-playground" style="width: 100%; height: 100px; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center;">
-                    Mouse over this area
-                </div>
-                <div id="event-output" class="demo-output"></div>
-            </div>
-        </section>
-
-        <section id="best-practices" class="best-practices">
-            <h2>Best Practices</h2>
-            <ul>
-                <li>
-                    <strong>Minimize DOM Access</strong> by storing references to frequently accessed elements in variables.
-                    <div class="example">
-                        <pre><code>// Instead of this
-document.getElementById('myElement').style.color = 'red';
-document.getElementById('myElement').textContent = 'Hello';
-
-// Do this
-const myElement = document.getElementById('myElement');
-myElement.style.color = 'red';
-myElement.textContent = 'Hello';</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <div>Counter: <span id="counter-value">0</span></div>
+                            <button id="counter-bad">Update (Bad Practice)</button>
+                            <button id="counter-good">Update (Good Practice)</button>
+                        </div>
+                        <button class="run-code" data-example="best-dom">Run Example</button>
+                        <div class="output" id="best-dom-output"></div>
                     </div>
-                </li>
-                <li>
-                    <strong>Use Event Delegation</strong> for dynamic content.
-                    <div class="example">
-                        <pre><code>// Instead of adding event listeners to each button
-document.querySelector('.container').addEventListener('click', function(event) {
-    // Check if the clicked element is a button
-    if (event.target.tagName === 'BUTTON') {
-        console.log('Button clicked:', event.target.textContent);
+                </div>
+
+                <div class="lesson-part">
+                    <h3>Use Event Delegation</h3>
+                    <p>Especially important for dynamic content.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Good practice - event delegation
+document.getElementById("dynamic-list").addEventListener("click", function(event) {
+    if (event.target.tagName === "LI") {
+        event.target.classList.toggle("selected");
     }
+});
+
+// Add new items
+document.getElementById("add-item").addEventListener("click", function() {
+    const list = document.getElementById("dynamic-list");
+    const newItem = document.createElement("li");
+    newItem.textContent = `Item ${list.children.length + 1}`;
+    list.appendChild(newItem);
 });</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <ul id="dynamic-list">
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                            </ul>
+                            <button id="add-item">Add Item</button>
+                        </div>
+                        <button class="run-code" data-example="best-delegation">Run Example</button>
+                        <div class="output" id="best-delegation-output"></div>
                     </div>
-                </li>
-                <li>
-                    <strong>Avoid Inline JavaScript</strong> for clean and maintainable code.
-                    <div class="example">
-                        <pre><code>// Avoid this in HTML
-// &lt;button onclick="doSomething()"&gt;Click me&lt;/button&gt;
+                </div>
 
-// Do this instead
-document.querySelector('button').addEventListener('click', doSomething);</code></pre>
-                    </div>
-                </li>
-                <li>
-                    <strong>Use classList for class manipulation</strong>
-                    <div class="example">
-                        <pre><code>// Instead of this
-element.className += ' new-class';
+                <div class="lesson-part">
+                    <h3>Avoid Inline JavaScript</h3>
+                    <p>Keep JavaScript code separate from HTML for cleaner, more maintainable code.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Bad practice (inline)
+// &lt;button onclick="alert('Hello')"&gt;Click Me&lt;/button&gt;
 
-// Do this
-element.classList.add('new-class');
-element.classList.remove('old-class');
-element.classList.toggle('active');
-element.classList.contains('hidden');</code></pre>
+// Good practice (separate)
+document.getElementById("clean-button").addEventListener("click", function() {
+    alert("Hello from clean, separated JavaScript!");
+});</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <button id="clean-button">Click Me (Clean JS)</button>
+                        </div>
+                        <button class="run-code" data-example="best-inline">Run Example</button>
+                        <div class="output" id="best-inline-output"></div>
                     </div>
-                </li>
-            </ul>
-        </section>
-    </main>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>Use classList for Class Manipulation</h3>
+                    <p>The classList API is cleaner than manipulating the className string.</p>
+                    <div class="code-example">
+                        <div class="code-editor">
+<pre><code>// Bad practice (manipulating className)
+function toggleClassBad() {
+    const element = document.getElementById("class-demo");
+    if (element.className.includes("highlight")) {
+        element.className = element.className.replace("highlight", "");
+    } else {
+        element.className += " highlight";
+    }
+}
+
+// Good practice (using classList)
+function toggleClassGood() {
+    document.getElementById("class-demo").classList.toggle("highlight");
+}</code></pre>
+                        </div>
+                        <div class="demo-area">
+                            <div id="class-demo" class="demo-box">Toggle my highlight class</div>
+                            <button id="toggle-bad">Toggle (Bad Practice)</button>
+                            <button id="toggle-good">Toggle (Good Practice)</button>
+                        </div>
+                        <button class="run-code" data-example="best-classlist">Run Example</button>
+                        <div class="output" id="best-classlist-output"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer>
-        <p>JavaScript Essentials Tutorial - Created for learning purposes</p>
+        <p>JavaScript Learning Platform &copy; 2025</p>
     </footer>
 
     <script src="script.js"></script>
