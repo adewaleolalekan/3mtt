@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Essentials Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Essentials</h1>
+        <p>A comprehensive guide to modern JavaScript fundamentals</p>
+    </header>
+
+    <div class="navigator">
+        <a href="#intro">Intro</a>
+        <a href="#lesson1">Lesson 1</a>
+        <a href="#lesson2">Lesson 2</a>
+        <a href="#lesson3">Lesson 3</a>
+        <a href="#lesson4">Lesson 4</a>
+        <a href="#lesson5">Lesson 5</a>
+        <a href="#lesson6">Lesson 6</a>
+        <a href="#best-practices">Best Practices</a>
+    </div>
+
+    <main>
+        <section id="intro">
+            <h2>JavaScript Essentials</h2>
+            <p>
+                JavaScript is a programming language that powers dynamic and interactive features on websites. 
+                It allows developers to control HTML and CSS, respond to user interactions, and manipulate content dynamically.
+            </p>
+            <p>
+                In this tutorial, we'll cover everything you need to know to get started with JavaScript development,
+                from basic syntax to modern ES6+ features.
+            </p>
+        </section>
+
+        <section id="lesson1" class="lesson">
+            <h2>Lesson 1: Variables, Data Types, and Operators</h2>
+
+            <h3>Step 1: Variables</h3>
+            <p>
+                Variables are containers for storing data. Use <code>let</code>, <code>const</code>, or <code>var</code> to declare variables.
+            </p>
+            <div class="example">
+                <pre><code>// Modern variable declarations
+const unchangeable = 'This value cannot be reassigned';
+let changeable = 'This value can be changed';
+
+// Legacy way (avoid using var in modern code)
+var oldWay = 'This is the old way';</code></pre>
+            </div>
+
+            <div class="interactive-demo">
+                <h4>Try it yourself:</h4>
+                <button id="variable-demo">Run Example</button>
+                <div id="variable-output" class="demo-output"></div>
+            </div>
+
+            <h3>Step 2: Data Types</h3>
+            <p>
+                JavaScript supports various data types such as Strings, Numbers, Booleans, Null, Undefined, and Objects.
+            </p>
+            <div class="example">
+                <pre><code>// String
+const name = 'JavaScript';
+
+// Number
+const version = 2023;
+const decimal = 10.5;
+
+// Boolean
+const isAwesome = true;
+
+// Null
+const empty = null;
+
+// Undefined
+let notDefined;
+
+// Object
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30
+};
+
+// Array (special type of object)
+const colors = ['red', 'green', 'blue'];</code></pre>
+            </div>
+
+            <h3>Step 3: Operators</h3>
+            <p>
+                Operators are used to perform operations on values like Arithmetic, Comparison, and Logical operations.
+            </p>
+            <div class="example">
+                <pre><code>// Arithmetic operators
+const sum = 5 + 10;      // Addition
+const difference = 10 - 5; // Subtraction
+const product = 5 * 10;  // Multiplication
+const quotient = 10 / 5; // Division
+const remainder = 10 % 3; // Modulus (remainder)
+
+// Comparison operators
+const isEqual = 5 === 5;       // Strict equality
+const isNotEqual = 5 !== 10;   // Strict inequality
+const greaterThan = 10 > 5;    // Greater than
+const lessThanOrEqual = 5 <= 5; // Less than or equal
+
+// Logical operators
+const andOperator = true && false; // Logical AND
+const orOperator = true || false;  // Logical OR
+const notOperator = !true;         // Logical NOT</code></pre>
+            </div>
+        </section>
+
+        <section id="lesson2" class="lesson">
+            <h2>Lesson 2: Functions, Loops, and Conditional Statements</h2>
+
+            <h3>Functions</h3>
+            <p>
+                Functions group reusable code and use parameters to make functions dynamic.
+            </p>
+            <div class="example">
+                <pre><code>// Function declaration
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Function expression
+const add = function(a, b) {
+    return a + b;
+};
+
+// Arrow function (ES6+)
+const multiply = (a, b) => a * b;</code></pre>
+            </div>
+
+            <div class="interactive-demo">
+                <h4>Try calling a function:</h4>
+                <button id="function-demo">Call greet()</button>
+                <div id="function-output" class="demo-output"></div>
+            </div>
+
+            <h3>Loops</h3>
+            <p>
+                Loops repeat code until a condition is met (e.g., For, While, and For...of loops).
+            </p>
+            <div class="example">
+                <pre><code>// For loop
+for (let i = 0; i < 5; i++) {
+    console.log(`Iteration ${i}`);
+}
+
+// While loop
+let count = 0;
+while (count < 5) {
+    console.log(`Count: ${count}`);
+    count++;
+}
+
+// For...of loop (iterates over iterable objects like arrays)
+const fruits = ['apple', 'banana', 'orange'];
+for (const fruit of fruits) {
+    console.log(fruit);
+}</code></pre>
+            </div>
+
+            <h3>Conditional Statements</h3>
+            <p>
+                Conditional Statements control flow based on conditions.
+            </p>
+            <div class="example">
+                <pre><code>// If statement
+if (condition) {
+    // code to run if condition is true
+}
+
+// If-else statement
+if (condition) {
+    // code to run if condition is true
+} else {
+    // code to run if condition is false
+}
+
+// If-else if-else statement
+if (condition1) {
+    // code to run if condition1 is true
+} else if (condition2) {
+    // code to run if condition2 is true
+} else {
+    // code to run if all conditions are false
+}
+
+// Switch statement
+const day = 'Monday';
+switch (day) {
+    case 'Monday':
+        console.log('Start of work week');
+        break;
+    case 'Friday':
+        console.log('End of work week');
+        break;
+    default:
+        console.log('Another day');
+}</code></pre>
+            </div>
+        </section>
+
+        <section id="lesson3" class="lesson">
+            <h2>Lesson 3: Arrays and Objects</h2>
+
+            <h3>Arrays</h3>
+            <p>
+                Arrays store multiple values in a single variable.
+            </p>
+            <div class="example">
+                <pre><code>// Creating an array
+const numbers = [1, 2, 3, 4, 5];
+
+// Accessing array elements (zero-based indexing)
+const firstNumber = numbers[0]; // 1
+
+// Array methods
+numbers.push(6);        // Add element to the end
+numbers.pop();          // Remove last element
+numbers.unshift(0);     // Add element to the beginning
+numbers.shift();        // Remove first element
+numbers.splice(2, 1);   // Remove element at specific position
+
+// Iterating through arrays
+numbers.forEach(number => console.log(number));
+
+// Transforming arrays
+const doubled = numbers.map(number => number * 2);
+const evenNumbers = numbers.filter(number => number % 2 === 0);</code></pre>
+            </div>
+
+            <div class="interactive-demo">
+                <h4>Array operations demo:</h4>
+                <button id="array-demo">Map and Filter</button>
+                <div id="array-output" class="demo-output"></div>
+            </div>
+
+            <h3>Objects</h3>
+            <p>
+                Objects use key-value pairs to group related data.
+            </p>
+            <div class="example">
+                <pre><code>// Creating an object
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30,
+    hobbies: ['reading', 'swimming', 'coding'],
+    address: {
+        street: '123 Main St',
+        city: 'Anytown',
+        country: 'USA'
+    },
+    getFullName: function() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
+
+// Accessing object properties
+console.log(person.firstName);          // Dot notation
+console.log(person['lastName']);        // Bracket notation
+console.log(person.address.city);       // Nested objects
+console.log(person.hobbies[0]);         // Arrays within objects
+console.log(person.getFullName());      // Methods</code></pre>
+            </div>
+        </section>
+
+        <section id="lesson4" class="lesson">
+            <h2>Lesson 4: ES6+ Features</h2>
+            <p>
+                Includes Arrow Functions, Destructuring, and Template Literals for easier and more readable code.
+            </p>
+
+            <h3>Arrow Functions</h3>
+            <div class="example">
+                <pre><code>// Traditional function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const addArrow = (a, b) => a + b;
+
+// Arrow function with more statements
+const greet = name => {
+    const greeting = `Hello, ${name}!`;
+    return greeting;
+};</code></pre>
+            </div>
+
+            <h3>Destructuring</h3>
+            <div class="example">
+                <pre><code>// Array destructuring
+const coordinates = [10, 20, 30];
+const [x, y, z] = coordinates;
+
+// Object destructuring
+const user = {
+    name: 'Alice',
+    email: 'alice@example.com',
+    role: 'admin'
+};
+const { name, email, role } = user;
+
+// With default values
+const { age = 25 } = user;</code></pre>
+            </div>
+
+            <h3>Template Literals</h3>
+            <div class="example">
+                <pre><code>// Old way of string concatenation
+const oldWay = 'Hello, ' + user.name + '! Your role is ' + user.role + '.';
+
+// Using template literals
+const newWay = `Hello, ${user.name}! Your role is ${user.role}.`;
+
+// Multi-line strings
+const multiLine = `This is a
+multi-line
+string`;</code></pre>
+            </div>
+
+            <h3>Other ES6+ Features</h3>
+            <div class="example">
+                <pre><code>// Spread operator
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]
+
+// Object spread
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1, c: 3 }; // { a: 1, b: 2, c: 3 }
+
+// Default parameters
+function greet(name = 'Guest') {
+    return `Hello, ${name}!`;
+}
+
+// Rest parameters
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+// Classes
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    greet() {
+        return `Hello, my name is ${this.name}`;
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <section id="lesson5" class="lesson">
+            <h2>Lesson 5: DOM Manipulation Basics</h2>
+            <p>
+                The DOM (Document Object Model) represents the structure of an HTML document. JavaScript can modify elements dynamically.
+            </p>
+
+            <h3>Selecting Elements</h3>
+            <div class="example">
+                <pre><code>// Select by ID
+const element = document.getElementById('myId');
+
+// Select by class name (returns a collection)
+const elements = document.getElementsByClassName('myClass');
+
+// Select by tag name (returns a collection)
+const paragraphs = document.getElementsByTagName('p');
+
+// Modern selectors (returns first match)
+const singleElement = document.querySelector('.myClass');
+
+// Modern selectors (returns all matches)
+const allElements = document.querySelectorAll('div.container');</code></pre>
+            </div>
+
+            <h3>Modifying Elements</h3>
+            <div class="example">
+                <pre><code>// Changing content
+element.textContent = 'New text content';
+element.innerHTML = '<span>HTML content</span>';
+
+// Changing attributes
+element.setAttribute('class', 'newClass');
+element.id = 'newId';
+element.href = 'https://example.com';
+
+// Changing styles
+element.style.color = 'red';
+element.style.fontSize = '16px';
+element.style.display = 'none';</code></pre>
+            </div>
+
+            <h3>Creating and Adding Elements</h3>
+            <div class="example">
+                <pre><code>// Create a new element
+const newParagraph = document.createElement('p');
+
+// Add content to the element
+newParagraph.textContent = 'This is a new paragraph';
+
+// Append element to the DOM
+document.body.appendChild(newParagraph);
+
+// Insert element before another element
+const referenceElement = document.getElementById('reference');
+document.body.insertBefore(newParagraph, referenceElement);
+
+// Remove element
+element.remove();</code></pre>
+            </div>
+
+            <div class="interactive-demo">
+                <h4>DOM Manipulation Demo:</h4>
+                <div id="dom-playground">
+                    <p id="demo-target">This text will change when you click the button.</p>
+                </div>
+                <button id="dom-demo">Change Text</button>
+                <button id="dom-add">Add Element</button>
+            </div>
+        </section>
+
+        <section id="lesson6" class="lesson">
+            <h2>Lesson 6: Event Handling</h2>
+            <p>
+                Event handling allows JavaScript to respond to user actions like clicks or key presses.
+            </p>
+
+            <h3>Adding Event Listeners</h3>
+            <div class="example">
+                <pre><code>// Adding a click event listener
+const button = document.querySelector('button');
+button.addEventListener('click', function() {
+    alert('Button clicked!');
+});
+
+// Using arrow functions
+button.addEventListener('click', () => {
+    console.log('Button clicked!');
+});
+
+// Named function handler
+function handleClick(event) {
+    console.log('Clicked!', event);
+}
+button.addEventListener('click', handleClick);
+
+// Remove event listener
+button.removeEventListener('click', handleClick);</code></pre>
+            </div>
+
+            <h3>Common Event Types</h3>
+            <div class="example">
+                <pre><code>// Mouse events
+element.addEventListener('click', handler);      // On click
+element.addEventListener('dblclick', handler);   // On double click
+element.addEventListener('mouseenter', handler); // Mouse enters element
+element.addEventListener('mouseleave', handler); // Mouse leaves element
+
+// Keyboard events
+document.addEventListener('keydown', handler);   // Key is pressed
+document.addEventListener('keyup', handler);     // Key is released
+
+// Form events
+form.addEventListener('submit', handler);        // Form submission
+input.addEventListener('focus', handler);        // Input gets focus
+input.addEventListener('blur', handler);         // Input loses focus
+input.addEventListener('change', handler);       // Input value changes
+
+// Document/Window events
+window.addEventListener('load', handler);        // Page finished loading
+window.addEventListener('resize', handler);      // Window resized
+document.addEventListener('DOMContentLoaded', handler); // DOM is ready</code></pre>
+            </div>
+
+            <h3>Event Object</h3>
+            <div class="example">
+                <pre><code>// The event object contains information about the event
+button.addEventListener('click', function(event) {
+    // Get information about the click
+    console.log(`Clicked at coordinates: ${event.clientX}, ${event.clientY}`);
+    
+    // Prevent default behavior
+    event.preventDefault();
+    
+    // Stop event propagation
+    event.stopPropagation();
+    
+    // Get the target element
+    console.log('Clicked element:', event.target);
+});</code></pre>
+            </div>
+
+            <div class="interactive-demo">
+                <h4>Event Handling Demo:</h4>
+                <div id="event-playground" style="width: 100%; height: 100px; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center;">
+                    Mouse over this area
+                </div>
+                <div id="event-output" class="demo-output"></div>
+            </div>
+        </section>
+
+        <section id="best-practices" class="best-practices">
+            <h2>Best Practices</h2>
+            <ul>
+                <li>
+                    <strong>Minimize DOM Access</strong> by storing references to frequently accessed elements in variables.
+                    <div class="example">
+                        <pre><code>// Instead of this
+document.getElementById('myElement').style.color = 'red';
+document.getElementById('myElement').textContent = 'Hello';
+
+// Do this
+const myElement = document.getElementById('myElement');
+myElement.style.color = 'red';
+myElement.textContent = 'Hello';</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Use Event Delegation</strong> for dynamic content.
+                    <div class="example">
+                        <pre><code>// Instead of adding event listeners to each button
+document.querySelector('.container').addEventListener('click', function(event) {
+    // Check if the clicked element is a button
+    if (event.target.tagName === 'BUTTON') {
+        console.log('Button clicked:', event.target.textContent);
+    }
+});</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Avoid Inline JavaScript</strong> for clean and maintainable code.
+                    <div class="example">
+                        <pre><code>// Avoid this in HTML
+// &lt;button onclick="doSomething()"&gt;Click me&lt;/button&gt;
+
+// Do this instead
+document.querySelector('button').addEventListener('click', doSomething);</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Use classList for class manipulation</strong>
+                    <div class="example">
+                        <pre><code>// Instead of this
+element.className += ' new-class';
+
+// Do this
+element.classList.add('new-class');
+element.classList.remove('old-class');
+element.classList.toggle('active');
+element.classList.contains('hidden');</code></pre>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>JavaScript Essentials Tutorial - Created for learning purposes</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
