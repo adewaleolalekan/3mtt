@@ -3,10 +3,10 @@ body {
     margin: 20px;
     padding: 20px;
     background-color: #f4f4f4;
+    text-align: center;
 }
 
 header {
-    text-align: center;
     color: #333;
     padding: 10px;
 }
@@ -18,7 +18,7 @@ h1, h2 {
 button {
     display: inline-block;
     margin: 10px;
-    padding: 10px;
+    padding: 10px 15px;
     background: #008cba;
     color: white;
     border: none;
@@ -33,29 +33,18 @@ button:hover {
 section {
     background: white;
     padding: 15px;
-    margin: 10px 0;
+    margin: 10px auto;
+    width: 80%;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 .output {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 20px;
+    padding: 15px;
     background: #e3f2fd;
     border-radius: 5px;
     font-weight: bold;
-}
-
-.example-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.example {
-    background: #ffffff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    min-height: 30px;
+    text-align: center;
 }
