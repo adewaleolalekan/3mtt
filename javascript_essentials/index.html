@@ -3,50 +3,610 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Learning</title>
+    <title>JavaScript Playground</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>JavaScript Essentials</h1>
+        <h1>JavaScript Playground</h1>
+        <p>An interactive way to learn JavaScript concepts</p>
     </header>
+
     <main>
-        <section>
-            <h2>Lesson 1: Variables, Data Types, and Operators</h2>
-            <button id="runVariables">Run Variables Code</button>
-            <button id="runDataTypes">Run Data Types Code</button>
-            <button id="runOperators">Run Operators Code</button>
-        </section>
+        <nav id="lessons-nav">
+            <h2>Lessons</h2>
+            <ul>
+                <li><a href="#lesson1" class="active">Variables, Data Types, and Operators</a></li>
+                <li><a href="#lesson2">Functions, Loops, and Conditionals</a></li>
+                <li><a href="#lesson3">Arrays and Objects</a></li>
+                <li><a href="#lesson4">ES6+ Features</a></li>
+                <li><a href="#lesson5">DOM Manipulation</a></li>
+                <li><a href="#lesson6">Event Handling</a></li>
+                <li><a href="#best-practices">Best Practices</a></li>
+            </ul>
+        </nav>
 
-        <section>
-            <h2>Lesson 2: Functions, Loops, and Conditionals</h2>
-            <button id="runFunctions">Run Functions Code</button>
-            <button id="runLoops">Run Loops Code</button>
-            <button id="runConditionals">Run Conditionals Code</button>
-        </section>
+        <section id="content-area">
+            <!-- Lesson 1: Variables, Data Types, and Operators -->
+            <div id="lesson1" class="lesson-content active">
+                <h2>Lesson 1: Variables, Data Types, and Operators</h2>
+                
+                <div class="concept">
+                    <h3>Variables</h3>
+                    <p>Variables are containers for storing data. Use <code>let</code>, <code>const</code>, or <code>var</code> to declare variables.</p>
+                    <div class="example">
+                        <code class="code-display">
+let name = "Alex";<br>
+const age = 30;<br>
+var isStudent = true;
+                        </code>
+                        <button class="run-btn" data-example="variables">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
 
-        <section>
-            <h2>Lesson 3: Arrays and Objects</h2>
-            <button id="runArrays">Run Arrays Code</button>
-            <button id="runObjects">Run Objects Code</button>
-        </section>
+                <div class="concept">
+                    <h3>Data Types</h3>
+                    <p>JavaScript supports various data types such as Strings, Numbers, Booleans, Null, Undefined, and Objects.</p>
+                    <div class="example">
+                        <code class="code-display">
+// String
+let text = "Hello World";<br>
+// Number
+let number = 42;<br>
+// Boolean
+let isTrue = false;<br>
+// Null
+let empty = null;<br>
+// Undefined
+let notDefined;<br>
+// Object
+let person = {
+  name: "Emma",
+  age: 28
+};
+                        </code>
+                        <button class="run-btn" data-example="dataTypes">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
 
-        <section>
-            <h2>Lesson 4: ES6+ Features</h2>
-            <button id="runArrowFunctions">Run Arrow Functions Code</button>
-            <button id="runDestructuring">Run Destructuring Code</button>
-            <button id="runTemplateLiterals">Run Template Literals Code</button>
-        </section>
+                <div class="concept">
+                    <h3>Operators</h3>
+                    <p>Operators are used to perform operations on values like Arithmetic, Comparison, and Logical operations.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Arithmetic operators
+let sum = 5 + 10;<br>
+let difference = 20 - 5;<br>
+let product = 4 * 3;<br>
+let quotient = 10 / 2;<br><br>
+// Comparison operators
+let isEqual = 5 === 5;<br>
+let isNotEqual = 10 !== 5;<br>
+let isGreater = 10 > 5;<br><br>
+// Logical operators
+let andResult = true && false;<br>
+let orResult = true || false;<br>
+let notResult = !true;
+                        </code>
+                        <button class="run-btn" data-example="operators">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+            </div>
 
-        <section>
-            <h2>Lesson 5 & 6: DOM Manipulation & Event Handling</h2>
-            <button id="runDomManipulation">Run DOM Manipulation Code</button>
-            <button id="runEventHandling">Run Event Handling Code</button>
+            <!-- Lesson 2: Functions, Loops, and Conditional Statements -->
+            <div id="lesson2" class="lesson-content">
+                <h2>Lesson 2: Functions, Loops, and Conditional Statements</h2>
+                
+                <div class="concept">
+                    <h3>Functions</h3>
+                    <p>Functions group reusable code and use parameters to make functions dynamic.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Function declaration
+function greet(name) {
+  return "Hello, " + name + "!";
+}
+
+// Function expression
+const multiply = function(a, b) {
+  return a * b;
+};
+
+// Try these functions
+greet("World");
+multiply(5, 3);
+                        </code>
+                        <button class="run-btn" data-example="functions">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Loops</h3>
+                    <p>Loops repeat code until a condition is met (e.g., For, While, and For...of loops).</p>
+                    <div class="example">
+                        <code class="code-display">
+// For loop
+let forResult = [];<br>
+for (let i = 0; i < 5; i++) {
+  forResult.push(i);
+}<br><br>
+// While loop
+let whileResult = [];<br>
+let j = 0;<br>
+while (j < 5) {
+  whileResult.push(j);
+  j++;
+}<br><br>
+// For...of loop
+let array = ["apple", "banana", "cherry"];
+let forOfResult = [];<br>
+for (let item of array) {
+  forOfResult.push(item);
+}
+                        </code>
+                        <button class="run-btn" data-example="loops">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Conditional Statements</h3>
+                    <p>Conditional Statements control flow based on conditions.</p>
+                    <div class="example">
+                        <code class="code-display">
+let score = 85;<br>
+let grade;<br><br>
+// If-else statement
+if (score >= 90) {
+  grade = "A";
+} else if (score >= 80) {
+  grade = "B";
+} else if (score >= 70) {
+  grade = "C";
+} else {
+  grade = "F";
+}<br><br>
+// Switch statement
+let day = 3;
+let dayName;<br>
+switch (day) {
+  case 1:
+    dayName = "Monday";
+    break;
+  case 2:
+    dayName = "Tuesday";
+    break;
+  case 3:
+    dayName = "Wednesday";
+    break;
+  default:
+    dayName = "Unknown";
+}
+                        </code>
+                        <button class="run-btn" data-example="conditionals">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lesson 3: Arrays and Objects -->
+            <div id="lesson3" class="lesson-content">
+                <h2>Lesson 3: Arrays and Objects</h2>
+                
+                <div class="concept">
+                    <h3>Arrays</h3>
+                    <p>Arrays store multiple values in a single variable.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Creating arrays
+let fruits = ["apple", "banana", "orange"];<br>
+// Accessing elements
+let firstFruit = fruits[0];<br>
+// Array methods
+fruits.push("grape");  // Add to the end
+fruits.pop();  // Remove from the end
+fruits.unshift("strawberry");  // Add to the beginning
+fruits.shift();  // Remove from the beginning<br>
+// Find the length
+let fruitCount = fruits.length;
+                        </code>
+                        <button class="run-btn" data-example="arrays">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Objects</h3>
+                    <p>Objects use key-value pairs to group related data.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Creating an object
+let person = {
+  name: "Sarah",
+  age: 32,
+  profession: "Developer",
+  skills: ["JavaScript", "HTML", "CSS"]
+};<br>
+// Accessing properties
+let personName = person.name;
+let personAge = person["age"];<br>
+// Adding and modifying properties
+person.location = "New York";
+person.age = 33;<br>
+// Nested objects
+let company = {
+  name: "Tech Corp",
+  employees: {
+    developers: 50,
+    designers: 30
+  }
+};
+                        </code>
+                        <button class="run-btn" data-example="objects">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lesson 4: ES6+ Features -->
+            <div id="lesson4" class="lesson-content">
+                <h2>Lesson 4: ES6+ Features</h2>
+                
+                <div class="concept">
+                    <h3>Arrow Functions</h3>
+                    <p>A shorter syntax for writing functions.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Traditional function
+function add(a, b) {
+  return a + b;
+}<br>
+// Arrow function
+const addArrow = (a, b) => a + b;<br>
+// Arrow function with more statements
+const calculateArea = (width, height) => {
+  const area = width * height;
+  return area;
+};
+                        </code>
+                        <button class="run-btn" data-example="arrowFunctions">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Destructuring</h3>
+                    <p>Extract values from arrays or objects into distinct variables.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Array destructuring
+const colors = ["red", "green", "blue"];<br>
+const [firstColor, secondColor] = colors;<br><br>
+// Object destructuring
+const user = {
+  name: "John",
+  email: "john@example.com",
+  country: "Canada"
+};<br>
+const { name, email } = user;
+                        </code>
+                        <button class="run-btn" data-example="destructuring">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Template Literals</h3>
+                    <p>String interpolation and multi-line strings.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Old way
+const oldGreeting = "Hello, " + user.name + "! Welcome to " + company.name + ".";<br>
+// Template literals
+const newGreeting = `Hello, ${user.name}! Welcome to ${company.name}.`;<br>
+// Multi-line strings
+const multiLine = `This is a string
+that spans across
+multiple lines.`;
+                        </code>
+                        <button class="run-btn" data-example="templateLiterals">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lesson 5: DOM Manipulation Basics -->
+            <div id="lesson5" class="lesson-content">
+                <h2>Lesson 5: DOM Manipulation Basics</h2>
+                
+                <div class="concept">
+                    <h3>Selecting Elements</h3>
+                    <p>Select elements from the DOM to modify them.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Get element by ID
+const element = document.getElementById("demo");<br>
+// Query selector (returns first match)
+const heading = document.querySelector("h1");<br>
+// Query selector all (returns all matches)
+const paragraphs = document.querySelectorAll("p");<br>
+// Try it on this page:
+document.querySelector("h1").textContent;
+                        </code>
+                        <button class="run-btn" data-example="domSelectors">Run Example</button>
+                        <div class="result-display"></div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Modifying Elements</h3>
+                    <p>Change content, attributes, and styles of DOM elements.</p>
+                    <div class="playground">
+                        <div id="modifyTarget">Click the buttons below to modify this text!</div>
+                        <div class="controls">
+                            <button id="changeText">Change Text</button>
+                            <button id="changeColor">Change Color</button>
+                            <button id="addClass">Add Class</button>
+                            <button id="removeClass">Remove Class</button>
+                        </div>
+                        <code class="code-display">
+// Change text content
+document.getElementById("changeText").addEventListener("click", function() {
+  document.getElementById("modifyTarget").textContent = "Text changed!";
+});<br>
+// Change styles
+document.getElementById("changeColor").addEventListener("click", function() {
+  document.getElementById("modifyTarget").style.color = "blue";
+});<br>
+// Add class
+document.getElementById("addClass").addEventListener("click", function() {
+  document.getElementById("modifyTarget").classList.add("highlight");
+});<br>
+// Remove class
+document.getElementById("removeClass").addEventListener("click", function() {
+  document.getElementById("modifyTarget").classList.remove("highlight");
+});
+                        </code>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Creating and Removing Elements</h3>
+                    <p>Dynamically add or remove elements from the DOM.</p>
+                    <div class="playground">
+                        <div id="elementContainer">
+                            <p>Elements will be added here.</p>
+                        </div>
+                        <div class="controls">
+                            <button id="addElement">Add Element</button>
+                            <button id="removeElement">Remove Element</button>
+                        </div>
+                        <code class="code-display">
+// Create and append element
+document.getElementById("addElement").addEventListener("click", function() {
+  const newPara = document.createElement("p");
+  newPara.textContent = "This is a new paragraph.";
+  newPara.classList.add("new-element");
+  document.getElementById("elementContainer").appendChild(newPara);
+});<br>
+// Remove last element
+document.getElementById("removeElement").addEventListener("click", function() {
+  const container = document.getElementById("elementContainer");
+  const elements = container.querySelectorAll("p");
+  if (elements.length > 1) {
+    container.removeChild(elements[elements.length - 1]);
+  }
+});
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lesson 6: Event Handling -->
+            <div id="lesson6" class="lesson-content">
+                <h2>Lesson 6: Event Handling</h2>
+                
+                <div class="concept">
+                    <h3>Adding Event Listeners</h3>
+                    <p>Respond to user actions like clicks or key presses.</p>
+                    <div class="playground">
+                        <div id="eventDemo" class="event-box">
+                            Interact with me!
+                        </div>
+                        <div id="eventOutput" class="event-output">Events will be logged here</div>
+                        <code class="code-display">
+const eventBox = document.getElementById("eventDemo");
+const output = document.getElementById("eventOutput");<br>
+// Click event
+eventBox.addEventListener("click", function(event) {
+  output.textContent = "Clicked at position: " + event.clientX + ", " + event.clientY;
+});<br>
+// Mouse over event
+eventBox.addEventListener("mouseover", function() {
+  eventBox.classList.add("hover");
+  output.textContent = "Mouse over event triggered";
+});<br>
+// Mouse out event
+eventBox.addEventListener("mouseout", function() {
+  eventBox.classList.remove("hover");
+  output.textContent = "Mouse out event triggered";
+});
+                        </code>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Event Object</h3>
+                    <p>Use the event object to get information about the event and control its behavior.</p>
+                    <div class="playground">
+                        <form id="eventForm">
+                            <input type="text" id="eventInput" placeholder="Type something...">
+                            <button type="submit">Submit</button>
+                        </form>
+                        <div id="formOutput" class="event-output">Submit the form to see the event...</div>
+                        <code class="code-display">
+const form = document.getElementById("eventForm");
+const formOutput = document.getElementById("formOutput");<br>
+// Form submission with preventDefault
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevents page reload
+  const inputValue = document.getElementById("eventInput").value;
+  formOutput.textContent = "Form submitted with value: " + inputValue;
+});<br>
+// Key events
+const input = document.getElementById("eventInput");
+input.addEventListener("keyup", function(event) {
+  formOutput.textContent = "Key pressed: " + event.key;
+});
+                        </code>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Event Delegation</h3>
+                    <p>Handle events for multiple elements with a single listener.</p>
+                    <div class="playground">
+                        <div id="delegationContainer">
+                            <h4>Click on any button below:</h4>
+                            <div class="button-container">
+                                <button class="delegate-btn" data-color="red">Red</button>
+                                <button class="delegate-btn" data-color="green">Green</button>
+                                <button class="delegate-btn" data-color="blue">Blue</button>
+                            </div>
+                            <div id="addBtnContainer">
+                                <button id="addButton">Add New Button</button>
+                            </div>
+                        </div>
+                        <div id="delegationOutput" class="event-output">Click a color button...</div>
+                        <code class="code-display">
+// Event delegation - single event listener for all buttons
+const container = document.querySelector(".button-container");
+const delegationOutput = document.getElementById("delegationOutput");<br>
+container.addEventListener("click", function(event) {
+  // Check if the clicked element is a button
+  if (event.target.classList.contains("delegate-btn")) {
+    const color = event.target.dataset.color;
+    delegationOutput.textContent = "Selected color: " + color;
+    delegationOutput.style.color = color;
+  }
+});<br>
+// Add a new button dynamically
+document.getElementById("addButton").addEventListener("click", function() {
+  const colors = ["purple", "orange", "pink", "brown"];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  
+  const newButton = document.createElement("button");
+  newButton.classList.add("delegate-btn");
+  newButton.dataset.color = randomColor;
+  newButton.textContent = randomColor.charAt(0).toUpperCase() + randomColor.slice(1);
+  
+  container.appendChild(newButton);
+});
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div id="best-practices" class="lesson-content">
+                <h2>Best Practices</h2>
+                
+                <div class="concept">
+                    <h3>Minimize DOM Access</h3>
+                    <p>Store references to frequently accessed elements in variables.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Bad practice - repeatedly accessing the DOM
+function updateCount(count) {
+  document.getElementById("counter").textContent = count;
+  if (count > 10) {
+    document.getElementById("counter").classList.add("highlight");
+  }
+}<br>
+// Good practice - store reference
+function updateCountBetter(count) {
+  const counter = document.getElementById("counter");
+  counter.textContent = count;
+  if (count > 10) {
+    counter.classList.add("highlight");
+  }
+}
+                        </code>
+                        <div class="best-practice-note">
+                            <strong>Why it matters:</strong> DOM operations are expensive. Minimizing them improves performance.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Use Event Delegation</h3>
+                    <p>Use a single event listener on a parent element to handle events for multiple children.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Bad practice - individual listeners for each button
+document.querySelectorAll(".action-btn").forEach(button => {
+  button.addEventListener("click", handleClick);
+});<br>
+// Good practice - event delegation
+document.querySelector(".button-container").addEventListener("click", function(event) {
+  if (event.target.classList.contains("action-btn")) {
+    handleClick(event);
+  }
+});
+                        </code>
+                        <div class="best-practice-note">
+                            <strong>Why it matters:</strong> More efficient for dynamic content, reduces memory usage, and simplifies code.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Avoid Inline JavaScript</h3>
+                    <p>Separate JavaScript from HTML for clean and maintainable code.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Bad practice - inline JavaScript
+// &lt;button onclick="doSomething()"&gt;Click Me&lt;/button&gt;<br>
+// Good practice - external JavaScript
+// In HTML: &lt;button id="actionButton"&gt;Click Me&lt;/button&gt;
+// In JS file:
+document.getElementById("actionButton").addEventListener("click", doSomething);
+                        </code>
+                        <div class="best-practice-note">
+                            <strong>Why it matters:</strong> Better separation of concerns, easier maintenance, and better caching.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Use classList for Class Manipulation</h3>
+                    <p>Use the classList API to add, remove, and toggle classes.</p>
+                    <div class="example">
+                        <code class="code-display">
+// Bad practice - manipulating className directly
+element.className = element.className + " active";<br>
+// Good practice - using classList
+element.classList.add("active");<br>
+element.classList.remove("inactive");<br>
+element.classList.toggle("highlight");
+                        </code>
+                        <div class="best-practice-note">
+                            <strong>Why it matters:</strong> Cleaner code, prevents accidentally overwriting existing classes.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    
-    <div id="output" class="output"></div>
-    
+
+    <footer>
+        <p>&copy; 2024 JavaScript Playground | <a href="#" id="toggleTheme">Toggle Dark Mode</a></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
